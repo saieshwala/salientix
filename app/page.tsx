@@ -1,65 +1,87 @@
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen bg-[#0A0C10] text-white font-sans">
+      {/* HERO */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-cyan-500/10 to-transparent" />
+        <div className="relative max-w-7xl mx-auto px-6 py-40 text-center">
+          <h1 className="text-5xl md:text-7xl font-semibold tracking-tight mb-6">
+            Intelligent software.
+            <br />
+            Built for scale.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10">
+            Salientix builds AI-driven systems that help businesses sell,
+            operate, and grow — reliably and securely.
           </p>
+          <div className="flex justify-center gap-6">
+            <a className="px-6 py-3 rounded-xl bg-white text-black text-sm font-medium hover:bg-white/90 transition">
+              Explore products
+            </a>
+            <a className="px-6 py-3 rounded-xl border border-white/20 text-sm hover:border-white/40 transition">
+              Contact
+            </a>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+      </section>
+
+      {/* TRUST STRIP */}
+      <section className="border-t border-white/10 border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-10 text-center text-white/50 text-sm">
+          Built with enterprise-grade security • NDA-ready • Designed for
+          long-term scale
+        </div>
+      </section>
+
+      {/* WHAT WE BUILD */}
+      <section className="max-w-7xl mx-auto px-6 py-32">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="grid md:grid-cols-3 gap-10"
+        >
+          <div className="rounded-2xl border border-white/10 p-8 bg-white/5">
+            <h3 className="text-xl mb-3">AI Commerce Systems</h3>
+            <p className="text-white/60 text-sm">
+              Intelligent systems that guide buyers, remove friction, and
+              improve conversion.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 p-8 bg-white/5">
+            <h3 className="text-xl mb-3">Automation Platforms</h3>
+            <p className="text-white/60 text-sm">
+              Software that replaces manual workflows with reliable,
+              scalable automation.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 p-8 bg-white/5">
+            <h3 className="text-xl mb-3">Business Intelligence Tools</h3>
+            <p className="text-white/60 text-sm">
+              Systems designed to support decisions, not overwhelm users
+              with data.
+            </p>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-indigo-500/10 to-transparent" />
+        <div className="relative max-w-4xl mx-auto px-6 py-40 text-center">
+          <h2 className="text-4xl md:text-5xl mb-8">
+            Let’s build intelligent systems.
+          </h2>
+          <a className="px-8 py-4 rounded-xl bg-white text-black text-sm font-medium hover:bg-white/90 transition">
+            Contact Salientix
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
