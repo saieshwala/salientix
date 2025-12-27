@@ -27,3 +27,16 @@ p {
 ::selection {
   background: rgba(255, 255, 255, 0.15);
 }
+
+:root {
+  --accent-blue: #2563eb; /* calm trust blue */
+}
+
+.bg-stars {
+  background-color: #000;
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.15), transparent),
+    radial-gradient(1px 1px at 80px 120px, rgba(255,255,255,0.12), transparent),
+    radial-gradient(1px 1px at 200px 90px, rgba(255,255,255,0.1), transparent);
+  background-size: 300px 300px;
+}
